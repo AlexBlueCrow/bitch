@@ -1,25 +1,19 @@
 {% load static %}
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title%}{%endblock %}</title>
-    <link href = "{% static "css/blog.css" %}" rel = "stylesheet">
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
+    <title color = 1.1.1>{% block title %}{% endblock %}</title>
+    <link href ="{%static "css/blog.css" %}" rel="stylesheet">
 </head>
 <body>
-    <div id="content">
-        {%block content %}
-        {%endblock%}
+    <div id = "content">
+        {% block content %}
+        {% endblock %}
     </div>
-    <div id="sidebar">
-      <h2>My blog</h2>
-        <p>This is my blog.</p>
-    </div>>
+    <div id = "sidebar">
+        <h2> My Blog side bar?</h2>
+            <p>This is my blog.</p>
+    </div>
+    
 </body>
-</html>>
+</html>

@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 import datetime
+from django.urls import reverse
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
@@ -15,8 +16,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length = 250)
     slug = models.SlugField(max_length = 250,unique_for_date = 'publish')
-    ##grammer may have changed for field
-
+    
 
     author = models.ForeignKey(User,
                                 on_delete = models.CASCADE,
@@ -33,7 +33,7 @@ class Post(models.Model):
     published = PublishedManager()
 
     def __str__(self):
-        return 
+        return f"{self.title}-{self.author}"
 
     class Meta: 
         ordering = ('-publish',)

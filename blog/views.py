@@ -6,7 +6,7 @@ def post_list(request):
     posts = Post.published.all()
     return render(request,
                 'blog/post/list.html',
-                {'Post':posts})
+                {'posts':posts})
 
 
 def post_detail(request,year,month,day,post):
@@ -16,7 +16,7 @@ def post_detail(request,year,month,day,post):
                                     publish_month = month,
                                     publish_day = day)
     return render(request,
-                'blog/post/detail/html',
+                'blog/post/detail.html',
                 {'post':post})
 
 
